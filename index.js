@@ -248,7 +248,7 @@ function get20s(arry) {
   /*Your Code Here*/
   const artistsName = [];
   for (let i = 0; i < arry.length; i++) {
-    if (arry[i].years.split(' - ') > "1900" && arry[i].years.split(' - ') <= "1999") artistsName.push(artists[i].name);
+    if (arry[i].years.split(' - ') > "1900" && arry[i].years.split(' - ') <= "1999") artistsName.push(arry[i].name);
   }
   return artistsName;
 }
