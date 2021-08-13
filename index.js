@@ -244,11 +244,15 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(/*Your Code Here*/) {
+function get20s(arry) {
   /*Your Code Here*/
+  const artistsName = [];
+  for (let i = 0; i < arry.length; i++) {
+    if (arry[i].years.split('19')[0].length === 0 && arry[i].years.split('19')[2].length === 2) artistsName.push(artists[i].name);
+  }
+  return artistsName
 }
-
-
+console.log('Task 4: ', get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
