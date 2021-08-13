@@ -250,7 +250,7 @@ function get20s(arry) {
   for (let i = 0; i < arry.length; i++) {
     if (arry[i].years.split('19')[0].length === 0 && arry[i].years.split('19')[2].length === 2) artistsName.push(artists[i].name);
   }
-  return artistsName
+  return artistsName;
 }
 console.log('Task 4: ', get20s(artists));
 
@@ -263,10 +263,12 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
+function removeArtist(arry, indx) {
   /*Your Code Here*/
+  arry.splice(indx, 1)
+  return arry.length;
 }
-
+// console.log('Task 5: ', removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -284,10 +286,21 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
+function addArtist(arry) {
   /*Your Code Here*/
+  arry.push(
+    { 
+      id: 20,
+      name: "Ad Kruëng", 
+      years: "19xx - current day",
+      genre: "Web Design", 
+      nationality: "American",
+      bio: "Javascript is Fun! - Say WHAT! :) " 
+    }  
+  );
+  return arry;
 }
-
+console.log('Task 6: ', addArtist(artists));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -297,10 +310,16 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
+function lotsOfArt(arry) {
   /*Your Code Here*/
-}
+  const artistsName =[];
+  for (let i = 0; i < arry.length; i++) {
+    if (arry[i].paintings>100)artistsName.push(arry[i].name)
 
+  }
+return artistsName;
+}
+console.log('Task 7: ', lotsOfArt(artists));
 
 /* ***** END OF TASKS ***** */
 
